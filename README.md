@@ -44,7 +44,7 @@ A powerful session recording and analytics platform that leverages AI to provide
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/session-intelligence.git
+   git clone https://github.com/hp15aug/session-intelligence.git
    cd session-intelligence
    ```
 
