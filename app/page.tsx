@@ -1,110 +1,141 @@
-"use client"
-import React, { useState } from 'react';
+import Link from 'next/link';
+import { ArrowRight, Brain, Video, Activity, Shield } from 'lucide-react';
 
-const App = () => {
+export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-white flex flex-col items-center relative overflow-x-hidden font-sans text-slate-900">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
 
-      {/* Background Ambience */}
-      <div className="fixed inset-0 z-0 opacity-40 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-slate-100 blur-3xl"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-slate-50 blur-3xl"></div>
-      </div>
+      {/* Navbar */}
+      <nav className="border-b border-gray-100 sticky top-0 bg-white/80 backdrop-blur-md z-50">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2 font-bold text-xl tracking-tight text-gray-900">
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+              <Activity size={18} />
+            </div>
+            SessionIntel
+          </div>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/log-in"
+              className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/dashboard"
+              className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-all shadow-sm hover:shadow-md active:scale-95"
+            >
+              Go to Dashboard
+            </Link>
+          </div>
+        </div>
+      </nav>
 
-      {/* Main Hero Content */}
-      <main className="relative z-10 max-w-3xl px-6 mx-auto text-center space-y-10 pt-32 pb-16">
+      {/* Hero Section */}
+      <main>
+        <div className="relative pt-20 pb-32 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="max-w-3xl mx-auto text-center space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold uppercase tracking-wide">
+                <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                Now with Gemini 1.5 Flash
+              </div>
 
-        {/* Badge */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-slate-600 text-xs font-medium tracking-wide uppercase mb-2">
-          v2.0 Now Available
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1]">
+                Understand your users, <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
+                  one session at a time.
+                </span>
+              </h1>
+
+              <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                Capture pixel-perfect session replays and get instant, AI-powered UX audits.
+                Stop guessing why users drop off and start fixing it.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <Link
+                  href="/dashboard"
+                  className="h-12 px-8 rounded-full bg-indigo-600 text-white font-medium flex items-center gap-2 hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:shadow-xl active:scale-95"
+                >
+                  Dashboard
+                  <ArrowRight size={18} />
+                </Link>
+                <a
+                  href="https://github.com/hp15aug/session-intelligence"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-12 px-8 rounded-full bg-white border border-gray-200 text-gray-700 font-medium flex items-center gap-2 hover:bg-gray-50 hover:border-gray-300 transition-all"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Background decoration */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+          </div>
         </div>
 
-        {/* Headline */}
-        <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.1]">
-          Design with <br className="hidden md:block" />
-          <span className="text-slate-400">absolute</span> clarity.
-        </h1>
+        {/* Features Grid */}
+        <div className="bg-gray-50 py-24 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Feature 1 */}
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                  <Video size={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">HD Session Replay</h3>
+                <p className="text-gray-500 leading-relaxed">
+                  Watch exactly what your users see. Every click, scroll, and mouse movement is captured with high fidelity using rrweb.
+                </p>
+              </div>
 
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-slate-500 font-light max-w-lg mx-auto leading-relaxed">
-          Eliminate the noise. Focus on the essential. A workspace built for those who value precision over complexity.
-        </p>
+              {/* Feature 2 */}
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                  <Brain size={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">AI Heuristic Analysis</h3>
+                <p className="text-gray-500 leading-relaxed">
+                  Don't just watch—understand. Our Gemini-powered AI analyzes sessions to detect friction points, user intent, and confusion.
+                </p>
+              </div>
 
-        {/* CTA Button */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() => window.location.href = '/dashboard'}
-            className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
-          >
-            Go to Dashboard
-            <svg
-              className="w-4 h-4 ml-2 -mr-1 transition-transform group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </button>
-
-          <button className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-slate-600 transition-all duration-200 bg-transparent rounded-full hover:text-slate-900 hover:bg-slate-50">
-            Read Documentation
-          </button>
+              {/* Feature 3 */}
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-green-600 mb-6">
+                  <Shield size={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Privacy First</h3>
+                <p className="text-gray-500 leading-relaxed">
+                  Built with privacy in mind. Sensitive data is sanitized, and you own your data completely on your own Supabase instance.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
-      {/* Content Section / Quick Actions */}
-      <section className="relative z-10 w-full max-w-4xl px-6 mx-auto mb-24 text-center">
-        <div className="h-px w-24 bg-slate-200 mx-auto mb-16"></div>
-
-        <h2 className="text-2xl font-semibold text-slate-800 mb-10 tracking-tight">Quick Actions</h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <div className="p-8 bg-white/50 backdrop-blur-sm rounded-3xl border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all duration-300">
-            <div className="h-10 w-10 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-slate-600">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2 font-bold text-gray-900">
+            <div className="w-6 h-6 bg-gray-900 rounded-md flex items-center justify-center text-white">
+              <Activity size={14} />
             </div>
-            <h3 className="font-medium text-slate-900 mb-2">Analytics</h3>
-            <p className="text-sm text-slate-500 mb-6">View performance metrics.</p>
-            <button className="w-full py-2.5 px-4 bg-white border border-slate-200 text-slate-600 rounded-xl text-sm font-medium hover:bg-slate-50 hover:text-slate-900 transition-colors">
-              View Data
-            </button>
+            SessionIntel
           </div>
-
-          {/* Card 2 */}
-          <div className="p-8 bg-white/50 backdrop-blur-sm rounded-3xl border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all duration-300">
-            <div className="h-10 w-10 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-slate-600">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-            </div>
-            <h3 className="font-medium text-slate-900 mb-2">Exports</h3>
-            <p className="text-sm text-slate-500 mb-6">Download your reports.</p>
-            <button className="w-full py-2.5 px-4 bg-white border border-slate-200 text-slate-600 rounded-xl text-sm font-medium hover:bg-slate-50 hover:text-slate-900 transition-colors">
-              Download
-            </button>
-          </div>
-
-          {/* Card 3 */}
-          <div className="p-8 bg-white/50 backdrop-blur-sm rounded-3xl border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all duration-300">
-            <div className="h-10 w-10 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-slate-600">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            </div>
-            <h3 className="font-medium text-slate-900 mb-2">Settings</h3>
-            <p className="text-sm text-slate-500 mb-6">Manage preferences.</p>
-            <button className="w-full py-2.5 px-4 bg-white border border-slate-200 text-slate-600 rounded-xl text-sm font-medium hover:bg-slate-50 hover:text-slate-900 transition-colors">
-              Configure
-            </button>
-          </div>
+          <p className="text-sm text-gray-500">
+            © {new Date().getFullYear()} Session Intelligence. Open Source.
+          </p>
         </div>
-      </section>
-
-      {/* Footer / Simple refined footer for context */}
-      <footer className="w-full text-center text-slate-400 text-sm font-light pb-6">
-        <p>&copy; 2025 Minimalist Inc.</p>
       </footer>
-
     </div>
   );
-};
-
-export default App;
+}

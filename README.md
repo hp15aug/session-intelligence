@@ -19,7 +19,6 @@ A powerful session recording and analytics platform that leverages AI to provide
     - **User Flow**: Reconstructs the user's journey.
     - **Core Intent**: Classifies behavior (Navigational, Transactional, etc.).
     - **UX Friction**: Pinpoints rage clicks, confusion, and abandonment.
-- **Claude-Like Interface**: A clean, document-style side panel for reading reports.
 
 ### 📊 Dashboard
 - **Session List**: Filterable view of all recorded sessions.
