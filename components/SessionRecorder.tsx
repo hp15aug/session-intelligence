@@ -28,6 +28,9 @@ export default function SessionRecorder() {
             // If we don't have a session ID yet (shouldn't happen if recording started), don't send
             if (!sessionId.current) return;
 
+            // Do not record sessions on dashboard pages
+            if (window.location.pathname.startsWith('/dashboard')) return;
+
             await fetch('/api/session/record', {
                 method: 'POST',
                 headers: {
