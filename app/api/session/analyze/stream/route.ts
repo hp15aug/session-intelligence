@@ -59,7 +59,7 @@ export async function POST(request: Request) {
     `;
 
         // 3. Stream Response
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
         const result = await model.generateContentStream(prompt);
 
         // Create a ReadableStream

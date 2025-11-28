@@ -13,7 +13,7 @@ A powerful session recording and analytics platform that leverages AI to provide
 - **High-Fidelity Replay**: Watch user sessions exactly as they happened with a custom player.
 
 ### 🧠 AI-Powered Intelligence
-- **Gemini 1.5 Flash Integration**: Uses Google's latest model for rapid analysis.
+- **Gemini 2.5 Flash Integration**: Uses Google's latest model for rapid analysis.
 - **Streaming Insights**: Real-time, token-by-token analysis generation.
 - **Heuristic Evaluation**: Automatically identifies:
     - **User Flow**: Reconstructs the user's journey.
@@ -29,7 +29,7 @@ A powerful session recording and analytics platform that leverages AI to provide
 
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Database & Storage**: [Supabase](https://supabase.com/) (PostgreSQL + Blob Storage)
-- **AI Model**: [Google Gemini 1.5 Flash](https://deepmind.google/technologies/gemini/)
+- **AI Model**: [Google Gemini 2.5 Flash](https://deepmind.google/technologies/gemini/)
 - **Recording Engine**: [rrweb](https://www.rrweb.io/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) + [Lucide Icons](https://lucide.dev/)
 

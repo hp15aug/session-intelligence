@@ -38,7 +38,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center space-y-8">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold uppercase tracking-wide">
                 <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-                Now with Gemini 1.5 Flash
+                Now with Gemini 2.5 Flash
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1]">
